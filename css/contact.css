@@ -1,0 +1,368 @@
+/* ---------------------------- */
+/* base */
+/* ---------------------------- */
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+    /*
+html { font-size: 62.5%; } の概要
+フォントサイズをピクセルで指定した場合、ユーザーがブラウザ設定でフォントサイズを変更していてもフォントの大きさは変わりません。
+はっきり言ってアクセシビリティ的ではないので、相対でフォントサイズを指定できるremやemといった単位を使うのが最近の主流です。
+ブラウザのデフォルトを変更していなければ、基準となるフォントサイズは16pxになりますが、1rem = 16pxという値は少々計算しづらい。
+30pxにしたい時は1.875remと端数が出るし、計算機を叩くはめになるので、「ぱっと見でサイズが読めない」人も出てきます。
+そこで、次のようにCSSを書いて、ルートフォントを10pxに変更するという手法が広まったようです。
+16px * 62.5% = 10px
+*/
+}
+body {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+    color: #171717;
+    font-family: 'Noto Serif', 'Noto Serif JP', serif;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.section-wrapper {
+    padding: 100px 0 70px;
+}
+.section-title {
+    max-width: 1000px;
+    color: #282f35;
+    font-size: 6rem;
+    font-style: italic;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+.section-title::after {
+    content: '';
+    display: inline-block;
+    background-color: #282f35;
+    width: 200px;
+    height: 5px;
+    margin-left: 30px;
+    vertical-align: middle;
+}
+.section-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+.section-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 9rem;
+    opacity: 0.05;
+}
+
+.submit-btn {
+    display: block;
+    width: 235px;
+    line-height: 60px;
+    margin: 0 auto 70px;
+    background-color: #f7d43f;
+    box-shadow: 0 0 6px #1b1310;
+    border-radius: 30px;
+    text-align: center;
+    color: #171717;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none;
+}
+.submit-btn:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* ---------------------------- */
+/* header */
+/* ---------------------------- */
+.header {
+    padding: 0px 30px 19px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    width: 100%;
+    transition: 0.3s;
+}
+/*  */
+/*
+box-sizing
+要素の幅（width）と高さ（height）の中にpaddingとborderを含めるかどうか」という設定ができる
+box-sizing: content-box; ←初期値！
+＿paddingとborderを幅と高さに含めない
+
+box-sizing: border-box;
+＿paddingとborderを幅と高さに含める
+
+box-sizing: inherit;
+＿親要素のborder-boxの値を引き継ぐ
+ */
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.header a {
+    color: #fff;
+    text-decoration: none;
+    transtion: 0.3s;
+    font-weight: bold;
+    font-style: italic;
+}
+.header a:hover {
+    opacity: 0.7;
+    transtion: 0.3s;
+}
+.site-title {
+    font-size: 2.6rem;
+}
+.nav-list {
+    display: flex;
+}
+.nav-item {
+    margin-right: 30px;
+}
+.nav-item:last-of-type {
+    margin-right: 0;
+}
+.burger-btn {
+    display: none;
+}
+.header.fixed {
+    position: fixed;
+    background-color: #282f35;
+    width: 100%;
+    transition: 0.3s;
+}
+
+/* ---------------------------- */
+/* page-title */
+/* ---------------------------- */
+.page-title-wrapper {
+    height: 453px;
+    background-image: url(../img/contact-page-bgi@2x.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.page-title {
+    font-size: 6rem;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    padding-top: 186px;
+    color: #fff;
+}
+.page-title-bottom {
+    font-size: 9rem;
+    color: #fff;
+    opacity: 0.1;
+    margin: 20px 0 0 48px;
+}
+
+/* ---------------------------- */
+/* fome */
+/* ---------------------------- */
+.form-wrapper {
+    padding: 100px 0 80px;
+}
+.form-list {
+    max-width: 700px;
+    margin: 0 auto 80px;
+    padding: 0 15px;
+}
+.form-item {
+    margin-bottom: 25px;
+}
+.form-item:last-of-type {
+    margin-bottom: 0;
+}
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input,
+textarea {
+    resize: none;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    border: 1px solid #141414;
+    width: 100%;
+    color: #171717;
+    box-sizing: border-box;
+}
+.input-text {
+    padding: 0 8px;
+    line-height: 30px;
+}
+textarea {
+    height: 170px;
+    padding: 0 8px;
+    line-height: 30px;
+}
+.checkbox-list {
+    display: flex;
+}
+.checkbox-item {
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+}
+input.checkbox,
+label.checkbox {
+    cursor: pointer;
+}
+input.checkbox {
+    border: solid 1px #282f35;
+    height: 13px;
+    width: 13px;
+    margin-right: 5px;
+}
+.checkbox:checked {
+    background-color: #333;
+}
+
+/* ---------------------------- */
+/* footer */
+/* ---------------------------- */
+.footer {
+    padding: 30px 0;
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #282f35;
+}
+
+@media screen and (max-width: 768px) {
+    /* ---------------------------- */
+    /* base_sp */
+    /* ---------------------------- */
+    .section-wrapper {
+        padding: 100px 0 40px;
+    }
+    .section-title {
+        padding: 0 4vw;
+        font-size: 3rem;
+        margin-bottom: 50px;
+    }
+    .section-title::after {
+        width: 90px;
+    }
+    .section-inner {
+        padding: 0 4vw;
+    }
+    .section-bottom {
+        font-size: 4rem;
+        padding: 0 4vw;
+    }
+    .submit-btn {
+        margin-bottom: 40px;
+    }
+    /* ---------------------------- */
+    /* header_sp */
+    /* ---------------------------- */
+    .header {
+        padding: 30px 4vw 0;
+    }
+    .header-nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #282f35;
+    }
+    .nav-list {
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-item {
+        margin: 0 0 30px;
+    }
+    .nav-item:last-of-type {
+        margin-bottom: 0;
+    }
+    .burger-btn {
+        display: block;
+        position: absolute;
+        top: 30;
+        right: 4vw;
+    }
+    .burger-btn .bar {
+        display: block;
+        height: 3px;
+        width: 30px;
+        background-color: #fff;
+        transition: 0.3s;
+    }
+    .bar_top,
+    .bar_mid {
+        margin-bottom: 8px;
+    }
+    .burger-btn.cross .bar_top {
+        /* 「burger-btn」に「cross」が付いたときの「bar_top」 */
+        transform: rotate(45deg) translate(8px, 8px);
+        transition: 0.3s;
+    }
+    .burger-btn.cross .bar_mid {
+        opacity: 0;
+    }
+    .burger-btn.cross .bar_bottom {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
+    body.noscroll {
+        overflow: hidden;
+    }
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
+        appearance: none;
+    }
+    .sp-br {
+        display: block;
+    }
+    .pc-br {
+        display: none;
+    }
+    /* ---------------------------- */
+    /* form */
+    /* ---------------------------- */
+    .checkbox-list {
+        display: block;
+    }
+    .checkbox-item {
+        margin-right: 0px;
+    }
+}
